@@ -1,0 +1,37 @@
+</> YAML
+
+name: Visual CI
+
+on: [pull_request]
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Start server
+        run: npm run start &
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:3000/checkout
+
+      - name: Run OS-88
+        uses: ./
+        with:
+          route: /checkout
+          strictness: high
+
+      - name: Upload diff
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diffs
+          path: tmp/diffs/
