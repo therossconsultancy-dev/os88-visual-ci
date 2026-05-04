@@ -1,0 +1,33 @@
+os88-visual-ci/
+│
+├── action.yml
+├── package.json
+├── tsconfig.json
+│
+├── src/
+│   ├── index.ts
+│   ├── render.ts
+│   ├── diff.ts
+│   ├── rules.ts
+│   ├── report.ts
+│   └── types.ts
+│
+├── runtime/
+│   └── sass-nasty-v1.json
+│
+├── app/
+│   └── server.js
+│
+├── snapshots/
+│   └── baseline/
+│       └── checkout.png
+│
+├── tmp/
+│   └── diffs/
+│
+├── docker/
+│   └── playwright.Dockerfile
+│
+└── .github/
+    └── workflows/
+        └── visual.yml
