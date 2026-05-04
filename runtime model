@@ -1,0 +1,2 @@
+Compiled TS → dist/ (no ts-node)
+single entry: dist/index.js
