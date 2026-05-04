@@ -1,0 +1,4 @@
+FAIL if:
+- SSIM mismatch > threshold
+OR
+- token violation detected
