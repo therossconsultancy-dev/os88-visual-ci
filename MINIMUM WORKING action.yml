@@ -1,0 +1,16 @@
+</> YAML
+
+name: OS-∞∞ Visual CI
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
+
+inputs:
+  route:
+    required: true
+    default: "/checkout"
+
+  strictness:
+    required: false
+    default: "high"
